@@ -1,10 +1,10 @@
 <div class="container py-3">
     <div class="row m-0">
         <div class="col-sm-12">
-            <div class="card">
+            <div class="card" *ngIf="employee" >
                 <div class="card-header">
                     <h2>
-                        All Projects
+                        Employee: {{ employee.name }}
                     </h2>
                 </div>
                 <div class="card-body">

@@ -1,3 +1,7 @@
-export interface Project {
+import { Employee } from "./employee";
 
+export interface Project {
+    employees: Employee[]
+    projectId: number;
+    projectName: string;
 }

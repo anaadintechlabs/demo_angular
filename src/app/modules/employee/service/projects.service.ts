@@ -19,21 +19,21 @@ export class ProjectsService {
 
     public getAllProjectList() {
         return this._apiService.get(URLS.GET_ALL_PROJECTS).pipe(map(res => {
-            this.projectlistSubject$.next(res.data);
-            return res.data
+            this.projectlistSubject$.next(res);
+            return res
         }), catchError(error => {
             console.log('Caught in CatchError. Returning 0')
             return of(0);
         })).subscribe();
     }
 
-    // public getEmployeeProjects(params: HttpParams) {
-    //     return this._apiService.get(URLS.GET_ALL_PROJECTS, params).pipe(map(res => {
-    //         return res.data
-    //     }), catchError(error => {
-    //         console.log('Caught in CatchError. Returning 0')
-    //         return of(0);
-    //     })).subscribe();
-    // }
+    public getEmployeeProjects(params: HttpParams) {
+        return this._apiService.get(URLS.GET_ALL_EMP_PROJECT, params).pipe(map(res => {
+            return res
+        }), catchError(error => {
+            console.log('Caught in CatchError. Returning 0')
+            return of(0);
+        }))
+    }
 
 }

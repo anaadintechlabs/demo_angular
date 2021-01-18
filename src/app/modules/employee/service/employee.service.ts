@@ -19,8 +19,8 @@ export class EmployeeService {
 
     public getAllEmployeesList() {
         return this._apiService.get(URLS.GET_ALL_EMPLOYEES).pipe(map(res => {
-            this.employeeListSubject$.next(res.data);
-            return res.data
+            this.employeeListSubject$.next(res);
+            return res
         }), catchError(error => {
             console.log('Caught in CatchError. Returning 0')
             return of(0);
